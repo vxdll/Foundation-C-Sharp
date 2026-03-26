@@ -318,3 +318,96 @@ System.Int32 a = 5;
 var hello = "Hell to World"; // string
 var c = 20; // int
 ```
+
+<h3>Вопросы для самопроверки</h3>
+
+1. Какие из нижеперечисленных НЕ являются встроенными типами языка C#?
+``` csharp
+    1) uint
+    2) sbyte
+    3) real
+    4) int128
+    5) object
+    6) float64
+```
+<details>
+  <summary>Ответ</summary>
+  real / int128 / float64
+</details>
+
+***
+
+2. Какой тип данных языка C# будет представлять следующая переменная?
+``` csharp
+bool enabled = true;
+```
+<details>
+  <summary>Ответ</summary>
+  Переменная enabled представляет тип bool
+</details>
+
+***
+
+3. Какой тип данных языка C# будет представлять следующая переменная?
+``` csharp
+var weight = 84.45f;
+```
+<details>
+  <summary>Ответ</summary>
+  Тут используется неявная типизация. При компиляции будет float.
+</details>
+
+***
+
+4. Сколько байт занимает значение типа uint?
+
+<details>
+  <summary>Ответ</summary>
+  Значение типа uint занимает 4 байта
+</details>
+
+***
+
+5. Какие из следующих вариантов представляют корректное определение переменных:
+``` csharp
+1) string person = "Tom";
+2) var person = "Tom";
+3) var person;
+4) string person;
+```
+<details>
+  <summary>Ответ</summary>
+  1) 2) 4)
+</details>
+
+***
+
+6. Какой системный тип соответствует базовому типу данных int в языке C# и сколько байт он занимает?
+``` csharp
+1) System.Int32, 4 байта
+2) System.Single, 4 байта
+3) System.UInt32, 8 байт
+4) System.Int16, 2 байта
+```
+<details>
+  <summary>Ответ</summary>
+  1) System.Int32, 4 байта
+</details>
+
+***
+
+7. Какие суффиксы используются в C# для явного указания типа данных float и decimal при присвоении значений?
+<details>
+  <summary>Ответ</summary>
+  F/f - float / M/m - decimal.
+</details>
+
+***
+
+8. Чем отличается объявление переменной с использованием var от явного указания типа данных, например, int?
+<details>
+  <summary>Ответ</summary>
+  При использовании var тип переменной определяется автоматически на основе присвоенного значения.
+</details>
+
+***
