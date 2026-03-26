@@ -411,3 +411,130 @@ var weight = 84.45f;
 </details>
 
 ***
+
+<h2>Консольный ввод-вывод</h2>
+
+<h3> Вывод </h3>
+
+Для консольного вывода используются следующие конструкции:
+``` csharp
+1) Console.WriteLine(); // Создание вывода спереходом на новую строку!
+2) Console.Write(); // Создает вывод, но без перехода на новую строку!
+3) Console.WriteLine($"{} {}"); // Интерполяция, с данной конструкцией можно использовать сразу несколько переменных.
+```
+
+Примеры:
+``` csharp
+Console.WriteLine("Hello my friend's);
+int age = 28;
+string name = "Grisha";
+Console.WriteLine($"My name is {name}, i'm {age} years");
+```
+
+**Использование плейсхолдеров при интерполяции**
+
+``` csharp
+int age = 28;
+string name = "Grisha";
+double height = 1.8;
+
+Console.WriteLine($"My name is {0}, i'm {1} years, my height is {2}", name, age, height);
+
+/* Таким образом получается, что переменные указанные после кавычек через запятую будут подставляться в ячейки (плейсхолдеры) {0} - {1) - {2}
+по своему порядку, где name {0}, age {1}, height {2}. Этот порядок может меняться в любом порядке, в котором будет необходимо.*/
+```
+
+<h3> Ввод </h3>
+
+Для ввода используется конструкция `Console.ReadLine();`
+Данная конструкция позволяет получить введенную строку.
+
+``` csharp
+Console.WriteLine("Введите ваше имя: ");
+string? name = Console.ReadLine();
+Console.WriteLine($"Привет, дорогой {name}");
+```
+
+`Console.ReadLine();` считывыет информацию только в виде строки. Если не окажется доступных для считывания строк, то метод возвратит `null` - что фактически говорит об отсуствии значений.
+Мы в примере указываем тип `string` при этом добавляем ?, тем самым говорим, что переменная может принимать значение `null`.
+
+Если необходимо считать не строковые типы, такие как int/double/decimal, то есть методы позволяющие это сделать:
+
+``` csharp
+Convert.ToInt32() // преобразует к типу int
+Convert.ToDouble() // преобразует к типу double
+Convert.ToDecimal() // преобразует к типу decimal
+```
+
+Пример:
+``` csharp
+Console.Write("Введите имя: ");
+string? name = Console.ReadLine();
+
+Console.Write("Введите возраст: ");
+int age = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите рост: ");
+double height = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите вашу з/п $: ");
+decimal salary = Convert.ToDecimal(Console.ReadLine());
+
+Console.WriteLine($"Name: {0} / Age: {1} / Height: {2} / Salary: {3}$", name, age, height, salary);
+```
+
+<h3>Важно!</h3>
+
+**При вводе значений вещественных чисел важно учитывать ОС, точнее её локализацию. Для иностранных (США / Великобритания) в кач-ве разделителя используется точка, в РФ запятая!**
+
+<h3>Вопросы для самопроверки</h3>
+
+1. Как вывести на консоль значения нескольких переменных в одной строке с помощью интерполяции?
+
+<details>
+  <summary>Ответ</summary>
+  `Console.WriteLine($" My name {name}, age {age}");
+</details>
+
+***
+
+2. Что такое плейсхолдеры в контексте вывода данных на консоль и как они используются?
+
+<details>
+  <summary>Ответ</summary>
+  Плейсхолдеры — это числа в фигурных скобках, которые заменяются значениями при выводе на консоль.
+</details>
+
+***
+
+3. В чём отличие метода Console.Write() от Console.WriteLine()?
+
+<details>
+  <summary>Ответ</summary>
+  Главное отличие, что `Console.Write();` не переводит на новую строку в отличие от `Console.WriteLine();`
+</details>
+
+***
+
+4. Каким методом можно получить ввод с консоли и в каком виде он возвращается?
+
+<details>
+  <summary>Ответ</summary>
+  Метод Console.ReadLine();. Возвращает он ввиде строки.
+</details>
+
+***
+
+5. Какие методы предоставляет платформа .NET для преобразования строковых значений в числовые типы данных?
+``` csharp
+1) Convert.ToString(), Convert.ToInt(), Convert.ToChar()
+2) Parse.ToInt(), Parse.ToFloat(), Parse.ToNumber()
+3) Convert.ToInt(), Convert.ToDouble(), Convert.ToDecimal()
+4) Console.WriteLine(), Console.Write(), Console.ReadLine()
+```
+<details>
+  <summary>Ответ</summary>
+  3) Convert.ToInt(), Convert.ToDouble(), Convert.ToDecimal()
+</details>
+
+***
